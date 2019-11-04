@@ -41,3 +41,19 @@ If you get the following error "Exception: path does not exist: host[0].trafficG
 - python MetricsDashBoard.py ../homatransport/src/dcntopo/results/manyReceivers/comparison/linkCheckBytes__-1/WorkloadHadoop-1.sca ../homatransport/src/dcntopo/config.xml
 
 
+Possible Errors in Plot Generation from R scripts:
+- Error in read.table("stretchVsUnsched.txt", na.strings = "NA", col.names = c("LoadFactor",  : 
+  duplicate 'row.names' are not allowed
+  
+  - Possible Solution (Need to confirm): Add row_names = NULL 
+  - Example:
+  stretchVsUnsched <- read.table("stretchVsUnsched.txt", na.strings = "NA",
+        col.names=c('LoadFactor', 'WorkLoad', 'MsgSizeRange', 'SizeCntPercent', 'BytesPercent', 'UnschedBytes', 'MeanStretch', 'MedianStretch', 'TailStretc$
+        header=TRUE, row.names=NULL)
+        
+- In addition: Warning message: In read.table("stretchVsUnsched.txt", na.strings = "NA", col.names = c("LoadFactor",  :
+  header and 'col.names' are of different lengths
+  
+   - Possible Solution (Need to confirm): Ensure all column names are specified in read.table
+  
+
