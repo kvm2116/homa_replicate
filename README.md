@@ -32,5 +32,12 @@ After you build the simulation package, you need to go to RpcTransportDesign/OMN
 
 How to Plot:
 
-cd analysis
-python MetricsDashBoard.py ../homatransport/src/dcntopo/results/manyReceivers/comparison/linkCheckBytes__-1/WorkloadHadoop-1.sca ../homatransport/src/dcntopo/config.xml
+- cd analysis
+- python PlotDigester.py --plotType StretchVsUnsched --resultDir /users/mkunal/Research/RpcTransportDesign/OMNeT++Simulation/homatransport/src/dcntopo/results/manyReceivers/comparison/linkCheckBytes__-1
+
+If you get the following error "Exception: path does not exist: host[0].trafficGeneratorApp[0].msg130BytesOnWire:histogram.count", make sure that in PlotDigester.py, the function prepE2EStretchVsSizeAndUnsched()'s scalar parser includes the line "parsedStats.globalListener = sp.globalListener"
+
+- cd analysis
+- python MetricsDashBoard.py ../homatransport/src/dcntopo/results/manyReceivers/comparison/linkCheckBytes__-1/WorkloadHadoop-1.sca ../homatransport/src/dcntopo/config.xml
+
+
