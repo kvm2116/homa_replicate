@@ -14,7 +14,12 @@ Installation guide: https://doc.omnetpp.org/omnetpp4/InstallGuide.pdf
 - $ make MODE=release
 
 - Copy the diff patch below into a file (eg. patch.diff) and apply it to OMNeT++ directory and rebuild OMNeT++ from the directory (.../omnetpp-4.6$ patch -p1 < patch.diff)
+- $  NO_TCL=1 ./configure
+- $ make MODE=release
 
+- Download INET (inet-3.0.0-src.tgz) from https://inet.omnetpp.org/Download.html
+- $ mv inet-3.0.0-src.tgz omnetpp-4.6/
+- $ tar xvfz inet-3.0.0-src.tgz
 - Enter inet/ directory and build inet framework.
 
 If you are building from command line:
@@ -23,9 +28,17 @@ If you are building from command line:
 
 2. Type "make makefiles". This should generate the makefiles for you automatically.
 
-3. Type "make" to build the inet executable (debug version). Use "make MODE=release"
-   to build release version.
+3. Use "make MODE=release" to build release version.
 
+< If you get the error: "In file included from     inet/common/serializer/sctp/SCTPSerializer.cc:28:0:
+./inet/common/serializer/sctp/headers/sctphdr.h:415:22: error:     flexible array member in union
+         uint8_t info[];", you have just to modify the code in the sctphdr.h and make it
+
+  uint8_t info [128];
+  
+  More details here: https://stackoverflow.com/questions/37969272/error-compiling-inet-framework-for-omnet: 
+  >
+  
 4. you can run specific examples by changing into the example's directory and executing "./run"
 
 - Enter homatransport directory and build homatransport executable file
