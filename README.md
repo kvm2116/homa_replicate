@@ -2,7 +2,16 @@
 Building the HOMA repo:
 Follow the steps from the original HOMA directory:
 
+- Download omnet++ version 4.6 from https://omnetpp.org/download/old.html
+   
 - Install omnet++ version 4.6 under the directory ./omnetpp-4.6/
+Installation guide: https://doc.omnetpp.org/omnetpp4/InstallGuide.pdf
+$ cd omnetpp-4.6
+$ . setenv
+- Add export PATH=$PATH:$HOME/omnetpp-4.6/bin in ~/.bash_profile
+$ source ~/.bash_profile
+$  NO_TCL=1 ./configure
+$ make MODE=release
 
 - Copy the diff patch below into a file (eg. patch.diff) and apply it to OMNeT++ directory and rebuild OMNeT++ from the directory (.../omnetpp-4.6$ patch -p1 < patch.diff)
 
