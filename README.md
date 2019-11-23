@@ -17,9 +17,6 @@ Installation guide: https://doc.omnetpp.org/omnetpp4/InstallGuide.pdf
 - $  NO_TCL=1 ./configure
 - $ make MODE=release
 
-- Download INET (inet-3.0.0-src.tgz) from https://inet.omnetpp.org/Download.html
-- $ mv inet-3.0.0-src.tgz omnetpp-4.6/
-- $ tar xvfz inet-3.0.0-src.tgz
 - Enter inet/ directory and build inet framework.
 
 If you are building from command line:
