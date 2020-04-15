@@ -1,4 +1,7 @@
 # homa_replicate
+
+Download HOMA: https://github.com/Stanley131/Research
+
 Building the HOMA repo:
 Follow the steps from the original HOMA directory:
 
